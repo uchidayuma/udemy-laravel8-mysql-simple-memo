@@ -31,7 +31,7 @@ class HomeController extends Controller
             ->orderBy('updated_at', 'DESC')// ASC＝小さい順、DESC=大きい順
             ->get();
 
-        return view('create');
+        return view('create', compact('memos'));
     }
 
     public function store(Request $request)
