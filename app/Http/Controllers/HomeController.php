@@ -98,8 +98,27 @@ class HomeController extends Controller
     public function update(Request $request)
     {
         $posts = $request->all();
-
-        Memo::where('id', $posts['memo_id'])->update(['content' => $posts['content']]);
+        // トランザクションスタート
+        DB::transaction(function () use($posts){
+            Memo::where('id', $posts['memo_id'])->update(['content' => $posts['content']]);
+            // 一旦メモとタグの紐付けを削除
+            MemoTag::where('memo_id', '=', $posts['memo_id'])->delete();
+            // 再度メモとタグの紐付け
+            foreach ($posts['tags'] as $tag) {
+                MemoTag::insert(['memo_id' => $posts['memo_id'], 'tag_id' => $tag]);
+            }
+            // 新規タグが入力されているかチェック
+            // もし、新しいタグの入力があれば、インサートして紐付ける
+            $tag_exists = Tag::where('user_id', '=', \Auth::id())->where('name', '=', $posts['new_tag'])->exists(); 
+            // 新規タグが既にtagsテーブルに存在するのかチェック
+            if( !empty($posts['new_tag']) && !$tag_exists ){
+                // 新規タグが既に存在しなければ、tagsテーブルにインサート→IDを取得
+                $tag_id = Tag::insertGetId(['user_id' => \Auth::id(), 'name' => $posts['new_tag']]);
+                // memo_tagsにインサートして、メモとタグを紐付ける
+                MemoTag::insert(['memo_id' => $posts['memo_id'], 'tag_id' => $tag_id]);
+            }
+        });
+        // トランザクションここまで
 
         return redirect( route('home') );
     }
