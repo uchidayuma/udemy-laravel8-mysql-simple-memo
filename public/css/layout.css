@@ -7,3 +7,11 @@
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
+
+@media screen and (max-width:768px) { 
+  /*　画面サイズが480pxからはここを読み込む　*/
+  .my-card-body{
+    height: auto;
+    max-height: 50vh;
+  }
+}
