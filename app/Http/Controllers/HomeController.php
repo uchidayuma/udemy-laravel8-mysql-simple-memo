@@ -35,6 +35,7 @@ class HomeController extends Controller
     public function store(Request $request)
     {
         $posts = $request->all();
+        $request->validate([ 'content' => 'required']);
         // dump dieの略 → メソッドの引数の取った値を展開して止める → データ確認
 
         // ===== ここからトランザクション開始 ======
@@ -51,8 +52,10 @@ class HomeController extends Controller
                 MemoTag::insert(['memo_id' => $memo_id, 'tag_id' => $tag_id]);
             }
             // 既存タグが紐付けられた場合→memo_tagsにインサート
-            foreach($posts['tags'] as $tag){
-                MemoTag::insert(['memo_id' => $memo_id, 'tag_id' => $tag]);
+            if(!empty($posts['tags'][0])){
+                foreach($posts['tags'] as $tag){
+                    MemoTag::insert(['memo_id' => $memo_id, 'tag_id' => $tag]);
+                }
             }
         });
         // ===== ここまでがトランザクションの範囲 ======
@@ -84,6 +87,7 @@ class HomeController extends Controller
     public function update(Request $request)
     {
         $posts = $request->all();
+        $request->validate([ 'content' => 'required']);
         // トランザクションスタート
         DB::transaction(function () use($posts){
             Memo::where('id', $posts['memo_id'])->update(['content' => $posts['content']]);
