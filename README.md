@@ -27,7 +27,7 @@ php artisan migrate
 |         メモ作成機能の開発（View側）                               |    memo-create-1            | 
 |          メモ作成機能の開発（DB側）                               |    memo-create-2           | 
 |         メモ一覧取得（DB側）                           |      memo-get-1          | 
-|             メモ一覧をレンダリング                                 |       memo-get-1         | 
+|             メモ一覧をレンダリング                                 |       memo-get-2      | 
 |        メモ更新機能（View側）                       |      memo-update-1          | 
 |        メモ更新機能（DB側）                       |      memo-update-2      | 
 |       メモ削除機能の開発          |     delete-1           |  
