@@ -1,0 +1,9 @@
+.my-card-body{
+  height: calc( 100vh - (55px + 48px) );
+}
+/* ellipseを当てると1行になる */
+.elipsis{
+  overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
