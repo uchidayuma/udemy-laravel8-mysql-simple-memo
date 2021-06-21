@@ -1,5 +1,8 @@
 # 【作って学ぶ】laravel8とMySQLで作るシンプルToDoアプリ
 
+こちらは打田裕馬がUdemyで公開している「laravel8とMySQLで作るシンプルToDoアプリ」のリポジトリです。
+
+詳しくは [Udemy](https://www.udemy.com/course/laravel8mysql)からご覧ください。
 
 [GitHubリポジトリはこちら](https://github.com/uchidayuma/udemy-laravel8-mysql-simple-memo)
 
