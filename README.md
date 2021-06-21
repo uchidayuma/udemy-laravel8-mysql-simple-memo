@@ -1,4 +1,9 @@
+# 【作って学ぶ】laravel8とMySQLで作るシンプルToDoアプリ
 
+
+[GitHubリポジトリはこちら](https://github.com/uchidayuma/udemy-laravel8-mysql-simple-memo)
+
+[データベース構造（ER図）](https://dbdiagram.io/d/60bdb1efb29a09603d183ab7)
 
 ## コマンド一覧
 ```
@@ -21,33 +26,37 @@ php artisan migrate
 | レクチャー名                                 | ブランチ名     | 
 | -------------------------------------------- | -------------- | 
 | マイグレーションファイルにテーブル定義を実装 | migration-file | 
-|      ログイン機能の実装                                        |  login              | 
-|        認証用レイアウトファイルの作成                                    |      layout          | 
-|        レイアウトの大枠を開発                                      |       card-layout        | 
-|         メモ作成機能の開発（View側）                               |    memo-create-1            | 
-|          メモ作成機能の開発（DB側）                               |    memo-create-2           | 
-|         メモ一覧取得（DB側）                           |      memo-get-1          | 
-|             メモ一覧をレンダリング                                 |       memo-get-2      | 
-|        メモ更新機能（View側）                       |      memo-update-1          | 
-|        メモ更新機能（DB側）                       |      memo-update-2      | 
-|       メモ削除機能の開発          |     delete-1           |  
-|        メモにタグを付けられるように改良      |      add-tag          | 
-|           メモに既存タグを付けられるように改良                                   |      add-tag-2          | 
-|     メモ更新にもタグ機能を付与（View側） |  edit-tag-1  |
-|     メモ更新にもタグ機能を付与（DB側） |  edit-tag-2  |
-|     ViewComposerで共通処理をまとめる  |  view-composer  |
-|  タグからの絞り込み検索（View側） |  filter-1  |
-| タグからの絞り込み検索（絞り込みロジック）| filter-2 |
-| タグ検索ロジックのリファクタリング | filter-refactaling |
-| メモ作成機能にバリデーションを追加しよう | validation-1 |
-| メモ削除機能に確認をはさもう | delete-confirm |
-|  fontawesomeの導入  | fontawesome |
-|  追加CSSで全体を整える | css-fix |
-|  bootstrapとCSSを使ってレスポンシブ対応をしよう |  responsive  |
-| 完成物 | main |
+| ログイン機能の実装                       |  login  | 
+| 認証用レイアウトファイルの作成             | layout| 
+| レイアウトの大枠を開発                    | card-layout        | 
+| メモ作成機能の開発（View側）              |  memo-create-1   | 
+| メモ作成機能の開発（DB側）                |    memo-create-2 | 
+| メモ一覧取得（DB側）                     |      memo-get-1  | 
+| メモ一覧をレンダリング                    |       memo-get-2  | 
+| メモ更新機能（View側）                   |      memo-update-1  | 
+| メモ更新機能（DB側）                     |      memo-update-2  | 
+| メモ削除機能の開発                       |     delete-1        |  
+| メモにタグを付けられるように改良            |      add-tag       | 
+| メモに既存タグを付けられるように改良        |      add-tag-2     | 
+| メモ更新にもタグ機能を付与（View側）        |  edit-tag-1  |
+| メモ更新にもタグ機能を付与（DB側）         |  edit-tag-2  |
+| ViewComposerで共通処理をまとめる         |  view-composer  |
+| タグからの絞り込み検索（View側）          |  filter-1  |
+| タグからの絞り込み検索（絞り込みロジック）  | filter-2 |
+| タグ検索ロジックのリファクタリング         | filter-refactaling |
+| メモ作成機能にバリデーションを追加しよう    | validation-1 |
+| メモ削除機能に確認をはさもう              | delete-confirm |
+| fontawesomeの導入                     | fontawesome |
+| 追加CSSで全体を整える                   | css-fix |
+| bootstrapとCSSを使ってレスポンシブ対応をしよう |  responsive  |
+| 完成物                               | main |
 
 
 ## 各種リンク
+
+[Progate PHP基礎](https://prog-8.com/courses/php)
+
+[Progate HTML・CSS・基礎](https://prog-8.com/courses/html)
 
 [Bootstrapのグリッド・システム](https://getbootstrap.jp/docs/4.2/layout/grid/)
 
