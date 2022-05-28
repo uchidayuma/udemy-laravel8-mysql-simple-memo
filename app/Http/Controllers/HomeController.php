@@ -94,8 +94,10 @@ class HomeController extends Controller
             // 一旦メモとタグの紐付けを削除
             MemoTag::where('memo_id', '=', $posts['memo_id'])->delete();
             // 再度メモとタグの紐付け
-            foreach ($posts['tags'] as $tag) {
-                MemoTag::insert(['memo_id' => $posts['memo_id'], 'tag_id' => $tag]);
+            if (!empty($posts['tags'])) {
+                foreach($posts['tags'] as $tag) {
+                    MemoTag::insert(['memo_id' => $posts['memo_id'], 'tag_id' => $tag]);
+                }
             }
             // 新規タグが入力されているかチェック
             // もし、新しいタグの入力があれば、インサートして紐付ける
